@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>day02</title>
+</head>
+<body>
+    <div id="reactContainer"></div>
+    <script src="/common/react.js"></script>
+    <script src="/common/react-dom.js"></script>
+    <script src="/common/browser.js"></script>
+    <script type="text/babel">
+        let arr = [
+            <h1 key="1">Hello oldFe</h1>,
+            <h2 key="2">Hello oldFe</h2>,
+            <h3 key="3">Hello oldFe</h3>,
+            <h4 key="4">Hello oldFe</h4>,
+            <h5 key="5">Hello oldFe</h5>
+        ]
+        ReactDOM.render(<div>{arr}</div>,document.getElementById('reactContainer'))
+    </script>
+</body>
+</html>
