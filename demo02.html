@@ -7,8 +7,20 @@
     <title>day02</title>
 </head>
 <body>
-    <script src="/common/browser.js"></script>
+    <div id="reactContainer"></div>
     <script src="/common/react.js"></script>
     <script src="/common/react-dom.js"></script>
+    <script src="/common/browser.js"></script>
+    <script type="text/babel">
+        var HelloComponent = React.createClass({ //声明组件
+            render:function() { //接收匿名函数
+                return <h1>Hello blackdog</h1>  //返回值
+            }
+        });
+        ReactDOM.render(
+        <HelloComponent />,
+        document.getElementById('reactContainer')
+        );
+    </script>
 </body>
 </html>
