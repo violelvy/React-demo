@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React组件：this.props.children</title>
+</head>
+<body>
+    <div id="violet"></div>
+    <script src="/common/react.js"></script>
+    <script src="/common/react-dom.js"></script>
+    <script src="/common/browser.js"></script>
+    <script type="text/babel">
+        var NoteList = React.createClass({
+            render:function() {
+                return (
+                    <ol>
+                        {React.Children.map(this.props.children,function(child) {
+                            return(<li>{child}</li>)
+                        })}
+                    </ol>
+                )
+            }
+        });
+        ReactDOM.render(
+            <NoteList>
+            <span>Black</span>
+            <span>Dog</span>
+            <span>WX</span>
+            </NoteList>,
+            document.getElementById("violet")
+        )
+        //注意 ：
+        //子组件返回的有可能是undefined
+    </script>
+    
+</body>
+</html>

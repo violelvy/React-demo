@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React组件：props属性验证</title>
+</head>
+<body>
+    <div id="violet"></div>
+    <script src="/common/react.js"></script>
+    <script src="/common/react-dom.js"></script>
+    <script src="/common/browser.js"></script>
+    <script type="text/babel">
+        var MyTitle = React.createClass({
+            // propTypes:{
+            //     title:React.PropTypes.string.isRequired,
+            // },
+            getDefaultProps:function() {
+                return {title:'hello violet'}
+            },
+            render:function() {
+                return <h2>{this.props.title}</h2>
+            }
+         })
+         var data= 'BLOCKDOG';
+        //  ReactDOM.render(
+        //      <MyTitle title={data}/>,
+        //      document.getElementById("violet");
+        //  )
+        ReactDOM.render(
+             <MyTitle title="hahahhah"/>,
+             document.getElementById("violet")
+         );
+         //错误提示
+         //注意标点符号！！！！！你是猪吗你连标点符号都没弄明白！！！！你是不是智障！！！！！
+    </script>
+</body>
+</html>
