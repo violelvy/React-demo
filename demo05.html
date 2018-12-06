@@ -12,12 +12,15 @@
     <script src="/common/react-dom.js"></script>
     <script src="/common/browser.js"></script>
     <script type="text/babel">
+    //React组件可以把它看作带有props属性集合和state状态集合并且构造出一个虚拟DOM结构的对象
        let TextBox = React.createClass({
             getInitialState:function() {
                 return {enable:false};  // 要有返回值
             },
             handlerClick:function(event){
-                this.setState({enable:!this.state.enable});  //改变state属性时，要用此方法 
+                this.setState({enable:!this.state.enable});  
+                //通知React组件数据发生变化的方法是调用成员函数setState(data,callback)。这个函数会合并data到this.state,并重新渲染组件。渲染完成后，调用可选的callback回调。（大部分情况下不需要调用回调，因为React会负责把界面更新到最新状态）
+                //改变state属性时，要用此方法 
             },
             render:function(){
                 return (

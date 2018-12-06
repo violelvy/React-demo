@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>day02-3之state</title>
+</head>
+<body>
+    <div id="violet"></div>
+    <script src="/common/react.js"></script>
+    <script src="/common/react-dom.js"></script>
+    <script src="/common/browser.js"></script>
+    <script type="text/babel">
+        //实例化阶段
+        //mounting 表示正在挂接虚拟DOM到真实DOM。
+        //updating 表示正在被重新渲染 
+        //unmounting 表示正在将虚拟DOM移除真实DOM
+        //componentWillMount() :组件将要挂载
+        //componentDidMount()  :组件已经挂载完成
+        //componentWillUpdate(object nextProps, object nextState) :组件将更新
+        //componentDidUpdate(object prevProps, object prevState)  :组件更新完成
+        //componentWillUnmount() :只有将要卸载才会触发。
+        var AddCount = React.createClass({
+            getInitialState: function () {
+                console.log('1.getInitialState');
+                return {count:1};
+            },
+            componentWillMount:function () {
+                console.log('2.componentWillMount');
+            },
+            componentDidMount:function () {
+                console.log('3.componentDidMount');
+            },
+            componentWillUpdate:function () {
+                console.log('4.componentWillUpdate');
+            },
+            componentDidUpdate:function () {
+                console.log('5.componentDidUpdate');
+            },
+            handleClick:function (event) {
+                this.setState({count:this.state.count+1});
+            },
+            render:function() {
+                return(
+                    <p>
+                        {this.state.count}<br/>
+                        <button onClick={this.handleClick}>ADD</button>
+                    </p>
+                )
+            }
+        });
+        ReactDOM.render(<AddCount />,document.getElementById("violet"));
+        //活动阶段
+        //销毁阶段
+    </script>
+    
+</body>
+</html>
