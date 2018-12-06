@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React组件：props属性验证</title>
+</head>
+<body>
+    <div id="violet"></div>
+    <script src="/common/react.js"></script>
+    <script src="/common/react-dom.js"></script>
+    <script src="/common/browser.js"></script>
+    <script type="text/babel">
+         //注意标点符号！！！！！你是猪吗你连标点符号都没弄明白！！！！你是不是智障！！！！！
+        var MyComponent = React.createClass({
+            handclick:function() {
+                this.refs.myText.focus();
+            },
+            render:function() {
+                return (
+                    <div>
+                        <input type="text" ref="myText"/>
+                        <input type="button" value="Focus the text input" onClick={this.handclick}/>
+                    </div>
+                )
+            }
+        });
+        ReactDOM.render(
+            <MyComponent />,
+            document.getElementById("violet")
+        );
+        //组件渲染完成之后才可以使用属性。
+    
+    </script>
+</body>
+</html>
